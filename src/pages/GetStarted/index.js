@@ -2,7 +2,9 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ILGetStarted, ILLogo } from '../../assets'
 import { Button, Gap } from '../../components'
-export default function GetStarted() {
+
+
+export default function GetStarted({navigation}) {
     // membuat dua pembungkus(Grouping) <view> pada getstarted > karna untuk membuat button selalu berada di bawah
     // >> pembungkus pertama berisi logo dan text title
     // >> pembungkus kedua berisi button 
@@ -23,7 +25,7 @@ export default function GetStarted() {
                      Button > dimana type tergantung dari nilai yang di berikan , jika secondary maka akan berwarna putih , dan default-nya berwarna biru 
                      Text > dimana type tergantung dari nilai yang di berikan jjika secondary maka warna color text berwarna hitam , jika tidak maka text berwarna putih
                     */}
-                    <Button title = 'Get Started'/>
+                    <Button title = 'Get Started' onPress={() => navigation.navigate('Register')}/>
                     {/* 
                         > component gap di import dari folder component/Atom/Gap
                         > Gap pada button agar memberi jarak di setiap button 
@@ -32,7 +34,7 @@ export default function GetStarted() {
                         note : untuk memberikann jarak/Gap pada component kecil / Atom tidak boleh di dalam file component kecil , karna setiap device berbeda2 layarnya, maka memberikan jarak di file yang di butuhkan untuk componnent kecil
                     */}
                     <Gap height={10}/>
-                    <Button type = 'secondary' title = 'Sign In'/>
+                    <Button type = 'secondary' title = 'Sign In' onPress={() => navigation.replace('Login')}/>
                 </View>
             </ImageBackground>
     )

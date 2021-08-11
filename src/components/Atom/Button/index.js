@@ -4,21 +4,24 @@ membuat komponent button yang dapat di panggil berulang kali
 */
 
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 
 /*
 pada komponen button > menrima 2 props yang akan di munculkan ketika di panggil
 1. props type > jenis button yang akan di tentukan pada tampilan layar
 2. props title > membuat title secara dinamis 
+3. props onPress > membuat sebuah fungsi tombol ketika di press
 */
-export default function Button({type, title}) {
+export default function Button({type, title, onPress }) {
     return (
         // merubah style button menjadi sebuah function yang menerima parameter
         // parameter function button > props type
-        <View style = {styles.button(type)}>
+        // touchableOpacity > agar tombol memberikan efect / agat bisa di jadikan tombol
+        // onPress > fungsi ketika tombol di press/tekan, yang bernilai props onPress yang akn di kirimkan / dipanggil 
+        <TouchableOpacity style = {styles.button(type)} onPress={onPress}>
             <Text style = {styles.text(type)}>{title}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 

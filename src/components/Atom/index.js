@@ -2,8 +2,12 @@
 import Button from './Button'
 // import / memanggil component Gap dari folder Gap/index.js
 import Gap from './Gap'
+// import input dari folder input
+import Input from './Input'
+// import link dari folder link
+import Link from './Link'
 
 
 // export button , Gap
 // {} kurung kurawal dikarnakan component dijadikan object
-export {Button, Gap}
+export {Button, Gap, Input, Link}

@@ -8,7 +8,11 @@ untuk mengimport semua folder2 yang ad di dalam folder pages
 import Splash from './Splash';
 // mengimport folder getstarted
 import GetStarted from './GetStarted';
+// mengimport folder Register
+import Register from './Register';
+// mengimport folder Login
+import Login from './Login';
 
 // yang nnttinya akan mengexport folder pages yang sudah di import dan dijadikan satu object
 // {} kurung kurawal > karna dijadikan sebuah object
-export {Splash, GetStarted}
+export {Splash, GetStarted, Register, Login}

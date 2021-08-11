@@ -8,3 +8,5 @@
 
 // memanggil semua folder / file yang berada di folder Atom
 export * from './Atom';
+
+export * from './Molekul';
