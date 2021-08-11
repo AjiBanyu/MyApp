@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        fontWeight: '600',
+        // fontWeight: '600', di ganti dengan nunito-semibold di fontFamily
+        fontFamily: 'Nunito-SemiBold',
         color: '#112340',
         marginTop: 20
     }
