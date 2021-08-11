@@ -6,6 +6,7 @@
          - folder pages > berisi kumpulan component 
          - folder utils
          - file App.js > file yang isinya kumpulan komponen yang di panggil dari folder pages
+         - folder router > folder ini berisi tentang navigatior/navigati 
 
 =========== MEMBUAT CUSTOM FONT =========
 >> file font di letakkan pada folder 
@@ -18,9 +19,13 @@
 >> documentasi tentang SVG > https://github.com/react-native-svg/react-native-svg
 
 =========== MEMANGGIL NAVIGATION ============
+>> 1. menginstall react-native navigation > https://reactnavigation.org/docs/getting-started
+>> 2. restar server react untuk menjalankan navigasi nantinya
+>> documentasi tentang navigation > https://reactnavigation.org/docs/getting-started
+
 
 =========== FOLDER PAGES =============
->> folder ini berisi kumpulan component yang nantinya akan di panggil pada file App.js
+>> folder ini berisi kumpulan component Halaman yang nantinya akan di panggil pada file App.js
 >> file index di folder pages > untuk mengexport semua folder2 yang ada di pages
 
 =========== FOLDER DI DALAM PAGES ==========

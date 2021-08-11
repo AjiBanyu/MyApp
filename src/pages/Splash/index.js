@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ILLogo } from '../../assets'
 
-export default function Splash() {
+export default function Splash({navigation}) {
+    // useEffetct > memberikan efek pada splash beberapa detik lalu masuk ke getstarted
+    useEffect(()=>{
+        setTimeout(() => {
+            navigation.replace('GetStarted')
+        }, 3000)
+    },[])
     return (
         <View style = {styles.pages}>
             <ILLogo style = {styles.logo}/>
