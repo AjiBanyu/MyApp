@@ -12,7 +12,20 @@ import GetStarted from './GetStarted';
 import Register from './Register';
 // mengimport folder Login
 import Login from './Login';
+// mengimport folder Upload
+import Upload from './Upload'
+import Home from './Home'
+import Barcode from './Barcode'
+import Settings from './Settings'
 
 // yang nnttinya akan mengexport folder pages yang sudah di import dan dijadikan satu object
 // {} kurung kurawal > karna dijadikan sebuah object
-export {Splash, GetStarted, Register, Login}
+export {
+    Splash, 
+    GetStarted, 
+    Register, 
+    Login, 
+    Upload,
+    Home,
+    Barcode, 
+    Settings}

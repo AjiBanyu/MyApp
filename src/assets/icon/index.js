@@ -1,3 +1,5 @@
-import LeftArrow from './left-arrow.svg';
+import LeftArrow from './ic-back-dark.svg';
+import AddPhoto from './ic-add-photo.svg';
+import RemovePhoto from './ic-remove-photo.svg';
 
-export {LeftArrow}
+export {LeftArrow, AddPhoto, RemovePhoto}

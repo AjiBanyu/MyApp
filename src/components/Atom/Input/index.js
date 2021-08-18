@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { colors } from '../../../utils'
 
 export default function Input({title}) {
     return (
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         padding: 12,
-        borderColor: '#e9e9e9',
+        borderColor: colors.border,
         height: 40
     },
     text:{

@@ -2,6 +2,7 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { ILGetStarted, ILLogo } from '../../assets'
 import { Button, Gap } from '../../components'
+import { colors } from '../../utils'
 
 
 export default function GetStarted({navigation}) {
@@ -26,7 +27,7 @@ export default function GetStarted({navigation}) {
                      Text > dimana type tergantung dari nilai yang di berikan jjika secondary maka warna color text berwarna hitam , jika tidak maka text berwarna putih
                     */}
                     <Button title = 'Get Started' onPress={() => navigation.navigate('Register')}/>
-                    {/* 
+                    {/*  
                         > component gap di import dari folder component/Atom/Gap
                         > Gap pada button agar memberi jarak di setiap button 
                         > height di dambil dari props height pada component Gap
@@ -45,13 +46,13 @@ const styles = StyleSheet.create({
         padding : 40,
         justifyContent: "space-between",
         flex: 1, // agar layar menjadi full 
-        backgroundColor: 'white'
+        backgroundColor: colors.white
     },
     text: {
         fontSize: 24,
         // fontWeight: '600',
         fontFamily: 'Nunito-SemiBold',
-        color: 'white',
+        color: colors.white,
         marginTop: 91
     }
 })

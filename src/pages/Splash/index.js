@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ILLogo } from '../../assets'
+import { colors } from '../../utils'
 
 export default function Splash({navigation}) {
     // useEffetct > memberikan efek pada splash beberapa detik lalu masuk ke getstarted
@@ -11,7 +12,7 @@ export default function Splash({navigation}) {
     useEffect(()=>{
         setTimeout(() => {
             navigation.replace('GetStarted')
-        }, 3000)
+        }, 3000) 
     },[navigation])
     return (
         <View style = {styles.pages}>
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     // justifyContent > center secara vertikal , flexdirection > row (baris)
     pages: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: colors.white,
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         // fontWeight: '600', di ganti dengan nunito-semibold di fontFamily
         fontFamily: 'Nunito-SemiBold',
-        color: '#112340',
+        color: colors.text.default,
         marginTop: 20
     }
 })

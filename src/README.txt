@@ -50,5 +50,9 @@
 
 
 
-
+========= FOLDER UTILS ============
+>> folder yang berfungsi sebagai folder global (yang dapat di panggil dimana saja)
+>> folder utils terdiri dari >
+   - folder colors > folder yang berisi file index variabel colors 
+>> file index.js di dalam folder utils untuk mengexport semua file yang ada di dalam folder colors
 

@@ -5,6 +5,8 @@ membuat komponent button yang dapat di panggil berulang kali
 
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { colors } from '../../../utils'
+import IconOnly from './IconOnly'
 
 
 /*
@@ -12,8 +14,13 @@ pada komponen button > menrima 2 props yang akan di munculkan ketika di panggil
 1. props type > jenis button yang akan di tentukan pada tampilan layar
 2. props title > membuat title secara dinamis 
 3. props onPress > membuat sebuah fungsi tombol ketika di press
-*/
-export default function Button({type, title, onPress }) {
+*/                                                   
+export default function Button({type, title, onPress, icon }) {
+    // mmebuat kondisi untuk icon arrow menjadi tombol secara dinamis
+    if (type === 'icon-only') {
+       return <IconOnly icon = {icon} onPress = {onPress}/>  
+    }
+
     return (
         // merubah style button menjadi sebuah function yang menerima parameter
         // parameter function button > props type
@@ -35,12 +42,12 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         alignItems: 'center',
         // pada object backgroundcolor > jika pada 'type' sama dengan nilainya secondary maka warnanya putih
-        backgroundColor: type === 'secondary' ? 'white' : '#0BCAD4'
+        backgroundColor: type === 'secondary' ? colors.button.primary.text : colors.button.primary.backgroundColor
     }),
     text: (type) => ( {
         // fontWeight: '600',
         fontFamily: 'Nunito-SemiBold',
         fontSize: 18,
-        color: type === 'secondary' ? 'black' : 'white'
+        color: type === 'secondary' ? colors.button.secondary.text : colors.button.secondary.backgroundColor
     })
 })
