@@ -8,6 +8,7 @@ import ScannerActive from './ic-scanner-active.svg'
 import Settings from './ic-settings.svg';
 import SettingsActive from './ic-settings-active.svg';
 import Doctor from './ic-doctor.svg';
+import IStar from './ic-star.svg';
 
 export {
     LeftArrow, 
@@ -19,5 +20,6 @@ export {
     ScannerActive,
     Settings,
     SettingsActive,
-    Doctor
+    Doctor,
+    IStar
 }
