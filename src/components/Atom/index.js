@@ -6,8 +6,18 @@ import Gap from './Gap'
 import Input from './Input'
 // import link dari folder link
 import Link from './Link'
+//import TabItem dari folder TabItem
+import TabItem from './TabItem'
 
+// import BtnBarcode from './BtnBarcode'
 
 // export button , Gap
 // {} kurung kurawal dikarnakan component dijadikan object
-export {Button, Gap, Input, Link}
+export {
+    Button, 
+    Gap, 
+    Input, 
+    Link,
+    TabItem,
+    // BtnBarcode
+}

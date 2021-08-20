@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function Barcode() {
+export default function RatedDoctor() {
     return (
         <View>
-            <Text>Welcome To Page Barcode</Text>
+            <Text>RatedDoctor component</Text>
         </View>
     )
 }

@@ -16,6 +16,7 @@ variabel mainColors > variabel basic yang terdapat object yang bernilai warna2
 const mainColors = {
     green1: '#0BCAD4',
     dark1 : '#112340',
+    dark2 : '#495A75',
     grey1 : '#7D8797',
     grey2 : '#e9e9e9'
 }
@@ -27,7 +28,9 @@ export const colors = {
     black: 'black',
     text: {
         default: mainColors.dark1,
-        secondary: mainColors.grey1
+        secondary: mainColors.grey1,
+        menuInactive : mainColors.dark2,
+        manuActive : mainColors.green1
     },
     button : {
         primary: {

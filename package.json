@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "emulator-android": "~/AppData/Local/Android/Sdk/emulator/emulator -avd Nexus_5_API_28"
+    "emulator-android": "~/AppData/Local/Android/Sdk/emulator/emulator -avd Nexus_5X_API_28"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.0.5",

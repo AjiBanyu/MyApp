@@ -15,7 +15,7 @@ import Login from './Login';
 // mengimport folder Upload
 import Upload from './Upload'
 import Home from './Home'
-import Barcode from './Barcode'
+import Doctor from './Doctor'
 import Settings from './Settings'
 
 // yang nnttinya akan mengexport folder pages yang sudah di import dan dijadikan satu object
@@ -27,5 +27,6 @@ export {
     Login, 
     Upload,
     Home,
-    Barcode, 
-    Settings}
+    Doctor, 
+    Settings,
+}
