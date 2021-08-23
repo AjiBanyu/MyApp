@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
             // jika active maka rubah text menjadi menuActive, jika tidak maka menuInactive
             color: active ? colors.text.manuActive: colors.text.menuInactive,
             fontFamily: fonts.primary[600],
-            marginTop: 4
+            marginTop: 3
         }
     )
     

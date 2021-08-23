@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { BottomNavigator } from '../components';
-import { GetStarted, Home, Login, Register, Splash, Upload, Settings, Doctor } from '../pages';
+import { GetStarted, Home, Login, Register, Splash, Upload, Settings, Doctor, Barcode } from '../pages';
 
 // variabel stack > yang mengimport createStackNavigator 
 // * note : wajib harus ada create stack navigator
@@ -21,6 +21,7 @@ const MainApp = () => {
                 <Tab.Screen name = 'Home' component = {Home} options = {{headerShown: false}}/>
                 <Tab.Screen name = 'Doctor' component = {Doctor} options = {{headerShown: false}}/>
                 <Tab.Screen name = 'Settings' component = {Settings} options = {{headerShown: false}}/>
+                <Tab.Screen name = 'Barcode' component = {Barcode} options = {{headerShown: false}}/>
             </Tab.Navigator>
     )
 }
@@ -35,7 +36,7 @@ export default function Router() {
         // props options ={{headerShown: false/true}} > untuk menghilangkan(false)/menampilkan(true) header pada setiap halaman
 
         //Stack.Screem name="MainApp" component={mainApp} > memanggil sebuat stack navigator dengan component functional mainApp
-        <Stack.Navigator initialRouteName = "MainApp"> 
+        <Stack.Navigator> 
             <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}}/>
             <Stack.Screen name="GetStarted" component={GetStarted} options={{headerShown: false}}/>
             <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>

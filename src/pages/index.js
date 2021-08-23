@@ -17,6 +17,7 @@ import Upload from './Upload'
 import Home from './Home'
 import Doctor from './Doctor'
 import Settings from './Settings'
+import Barcode from './Barcode'
 
 // yang nnttinya akan mengexport folder pages yang sudah di import dan dijadikan satu object
 // {} kurung kurawal > karna dijadikan sebuah object
@@ -29,4 +30,5 @@ export {
     Home,
     Doctor, 
     Settings,
+    Barcode
 }

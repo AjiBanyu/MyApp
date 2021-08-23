@@ -5,6 +5,7 @@ import ILNullPhoto from './null-photo.png'
 import IDoctor from './doctor.svg'
 import IDoctorChildren from './doctor_anak.svg'
 import IDoctorAnimal from './icon_dokter_hewan.svg'
+import IHospital from './hospitals-background.png'
 
 
 // mengeksport ILLogo 
@@ -15,5 +16,6 @@ export {
     ILNullPhoto,
     IDoctor,
     IDoctorChildren,
-    IDoctorAnimal
+    IDoctorAnimal,
+    IHospital
 }
