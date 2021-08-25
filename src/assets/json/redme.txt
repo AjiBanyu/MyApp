@@ -1,0 +1,48 @@
+ada 3 cara penambahan data >
+1. Data inline
+2. Data State
+3. Data Json
+
+1. data inline > dengan menambahka props pada function lalu di panggil oleh componentnya
+contoh : 
+    export function input({title}){
+        return (
+            <Text>{title}</Text>
+        )
+    }
+
+    memberikan data nya 
+    
+    export function Data(){
+        return (
+            <Input title = 'Aji '/>
+        )
+    }
+
+2. data state > menambahkan data dengan useState, dengan memberikan useState() sebuah array yang di dalamnya ada objeck
+contoh : 
+    export function input(){
+        const [text, setText] = useState([
+            {
+                id : 1,
+                category: Dokter Umum
+            },
+            {
+                id : 2,
+                category: Dokter Umum
+            },
+            {
+                id : 3,
+                category: Dokter Umum
+            },
+        ])
+
+        return (
+            // cara mengambil data dengan state
+            {
+                text.map((category) => {
+                    return setText(category.category)
+                })
+            }
+        )
+    }

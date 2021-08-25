@@ -4,9 +4,12 @@ import { DocterCategory, HomeProfile, NewsItems, RatedDoctor } from '../../compo
 import { Gap } from '../../components/Atom'
 import { colors, fonts } from '../../utils'
 import { News1, News2, News3 } from '../../assets'
+import { JSONCategory } from '../../assets'
 
 
 export default function Doctor() {
+
+    
     return (
         <View style = {styles.pages}>
              <View style = {styles.container}>
@@ -22,14 +25,19 @@ export default function Doctor() {
                         <ScrollView horizontal showsHorizontalScrollIndicator = {false}>
                             <View style = {{flexDirection: 'row', marginLeft: -16}}>
                                 <Gap width={32}/>
-                                <DocterCategory/>
+                                {
+                                    JSONCategory.data.map((item) => {
+                                        return (
+                                            <DocterCategory title={item.category}/>
+                                        )
+                                    })
+                                }
+                                {/* <DocterCategory/>
                                 <Gap width={12}/>
                                 <DocterCategory/>
                                 <Gap width={12}/>
                                 <DocterCategory/>
-                                <Gap width={12}/>
-                                <DocterCategory/>
-                                <Gap width={12}/>
+                                <Gap width={12}/> */}
                             </View>
                         </ScrollView>
                     </View>

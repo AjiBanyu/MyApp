@@ -4,6 +4,9 @@ import { GetStarted, Splash } from './pages';
 import { NavigationContainer } from '@react-navigation/native';
 import Router from './router';
 
+// import flashmessage > wajib di import pada root app
+import FlashMessage from "react-native-flash-message";
+
 // import navigationContainer > di ambil dari react-navigation sebelumnya harus menginstall terlebih dahulu 
 
 /*
@@ -16,9 +19,15 @@ pembungkus navigation container > agar halaman bisa berpindah
 */
 const App = () => {
     return(
+      <>
         <NavigationContainer>
           <Router/>
         </NavigationContainer>
+        {/* flashmessage diletakkan di bawah navigationContainer
+          karna yang di tampilkan pertama adalah router
+        */}
+        <FlashMessage position="top" />
+      </>
     )
 }
 

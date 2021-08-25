@@ -56,3 +56,16 @@
    - folder colors > folder yang berisi file index variabel colors 
 >> file index.js di dalam folder utils untuk mengexport semua file yang ada di dalam folder colors
 
+
+
+========= menampilkan FLASH MESSAGES =========
+>> install flash messages 
+>> impoort flash messages di file root App
+>> documentasi https://www.npmjs.com/package/react-native-flash-message
+
+
+========== menambahkan PHOTO ========== 
+>> install image-picker > untuk pengambilan gambar dengan camera dan gallery
+>> restart server 
+>> import image picker 
+>> documentasi https://github.com/react-native-image-picker/react-native-image-picker#Asset-Object

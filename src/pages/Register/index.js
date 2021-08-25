@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { Button, Gap, Header, Input } from '../../components'
+import { Button, Gap, Header, Input, Loading } from '../../components'
 import { useForm } from '../../utils';
+
+// import firebase
+import { Firebase } from '../../config';
+// import untuk flash message
+import { showMessage, hideMessage } from "react-native-flash-message";
 
 // ==== SISI INTEGRRASI ====
 // 1. Menyimpan dan mengumpulkan data dari 4 form input 
@@ -19,6 +24,7 @@ export default function Register({navigation}) {
    const [password, setPassword] = useState('');
 
    // cara kedua dengan state costume 
+   // 1. buat file useForm untuk meng costume useState
    const [form, setForm] = useForm({
        fullName: '',
        profession: '',
@@ -27,11 +33,73 @@ export default function Register({navigation}) {
    }) 
 
 
+   // state loading
+   const [loading, setLoading] = useState(false);
+
    // function onContinue > fungsi ketika tombol continue di klik data akan tersimpan pada server/local
    
    const onContinue = () => {
     // navigation.navigate('Upload')
-    console.log(form)
+
+    // setLoading > ketika tombol di klik muncul setLoading 
+    setLoading(true)
+
+    // Autentikasi Sandi dengan firebase
+    // import firebase dari folder config/fire
+    // param di ambil dari value input yang dikirim dari form.email untuk email, dan form.password untuk password
+    Firebase.auth().createUserWithEmailAndPassword(form.email, form.password)
+
+    // .then > menampilkan jika berhasil
+    .then((userCredential) => {
+    //     Signed in
+        var user = userCredential.user;
+
+        // setLoading menjadi false / menghilang ketika sukses
+        setLoading(false)
+
+        // jika setForm typeform-nya reset , maka reset formnya
+        setForm('reset');
+
+        // jika sukses menampilkan flash message sukses
+        showMessage({
+            message: "Simple message",
+            type: "success",
+            position: "bottom",
+            icon: "success"
+          });
+
+        // jika sukses data di simpan pada firebase.database()
+        // menyimpan data dengan .set()
+        // const data > berisi object data yang dikirimkan dari state form
+        const data = {
+            fullName: form.fullName,
+            profession: form.profession,
+            email: form.email
+        }
+        Firebase.database()
+        .ref('users/' + user.uid + '/')
+        .set(data);
+        console.log('register success',user);
+        // ...
+    })
+    // .catch > mengirimkan pesan error jika gagal
+    .catch((error) => {
+    //     const errorCode = error.code;
+        const errorMessage = error.message;
+
+        // setLoading menjadi false / menghilang ketika gagals
+        setLoading(false)
+        
+        // jika gagal menampilkan flash message gagal
+        showMessage({
+            message: errorMessage,
+            type: "danger",
+            position: "bottom",
+            icon: "danger"
+          });
+        console.log(error)
+    });
+    // console.log(form)
    }
 
     return (
@@ -56,7 +124,11 @@ export default function Register({navigation}) {
                 <Button title = "Continue" onPress = {onContinue}/>
             </View>
             </ScrollView>
-            
+            {/* membuat kondisi ketika loading bernilai false maka loading menghilang 
+                loading di ambil dari useState default
+            */}
+            {loading && <Loading/> }
+             
         </View>
     )
 }

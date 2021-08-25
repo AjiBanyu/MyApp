@@ -1,26 +1,44 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image} from 'react-native'
-import { AddPhoto, ILNullPhoto } from '../../assets'
+import React, {useState} from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
+import { AddPhoto, ILNullPhoto, RemovePhoto } from '../../assets'
 import { Header, Button, Link, Gap } from '../../components'
 import { colors, fonts } from '../../utils'
 
+// import image-picker untuk menambahkan / upload foto
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
 const Upload = ({navigation}) => {
+
+    // membuat state icon add/remove, secara default bernilai false
+    const [icon, setIcon] = useState(false)
+
+    // membuat function onPress getPhoto
+    const getPhoto = () => {
+        launchImageLibrary({options}, Response => {
+                console.log('response data', Response.uri)
+                // const source = Response.assets.type
+                
+        })
+    }
     return (
         <View style = {{flex: 1, backgroundColor: colors.white}}>
             <Header title = 'Upload' onPress={() => navigation.replace('Register')}/>
             <View style = {styles.pages}>
                 <View style = {styles.content}>
-                    <View style = {styles.avatar}>
+                    <TouchableOpacity style = {styles.avatar} onPress={getPhoto}>
                         <Image source = {ILNullPhoto} style = {styles.imgPhoto} />
-                        <AddPhoto style = {styles.icon}/>
-                    </View>
+                        {/* membuat kondisi jika ada fotonya addPhoto icon nya remove */}
+                        {icon && <AddPhoto style = {styles.icon}/>}
+                        {!icon && <RemovePhoto style = {styles.icon}/>}
+                        
+                    </TouchableOpacity>
                     <Gap height={24} />
                     <Text style = {styles.name}>Aji Banyu Pamungkas</Text>
                     <Text style = {styles.work}>Product Designer</Text>
 
                 </View>
                 <View >
-                    <Button style = {styles.btnUpload} title = 'Upload and Continue'/>
+                    <Button style = {styles.btnUpload} title = 'Upload and Continue' disable/>
                     <Gap height = {30}/>
                     <Link title = 'Skip for This' Align= 'center' size = {16}/>
                 </View>

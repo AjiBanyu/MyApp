@@ -3,14 +3,16 @@ import { StyleSheet, Text, View } from 'react-native'
 import { IDoctor, IDoctorChildren } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-export default function DocterCategory() {
+export default function DocterCategory({title}) {
     return (
-        <View style = {styles.container}>
+        <View style = {{
+            marginRight: 16
+        }}>
             <View style = {styles.card}>
                 <IDoctorChildren style = {{marginBottom: 28}}/>
             
                     <Text style = {styles.label}>Saya Butuh</Text>
-                    <Text>Dokter Umum</Text>
+                    <Text>{title}</Text>
                 
             </View>
         </View>

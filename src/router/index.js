@@ -36,7 +36,7 @@ export default function Router() {
         // props options ={{headerShown: false/true}} > untuk menghilangkan(false)/menampilkan(true) header pada setiap halaman
 
         //Stack.Screem name="MainApp" component={mainApp} > memanggil sebuat stack navigator dengan component functional mainApp
-        <Stack.Navigator> 
+        <Stack.Navigator initialRouteName="Upload"> 
             <Stack.Screen name="Splash" component={Splash} options={{headerShown: false}}/>
             <Stack.Screen name="GetStarted" component={GetStarted} options={{headerShown: false}}/>
             <Stack.Screen name="Login" component={Login} options={{headerShown: false}}/>
